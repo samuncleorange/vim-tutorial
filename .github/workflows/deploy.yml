@@ -9,7 +9,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  # Use lowercase explicitly
+  IMAGE_NAME: samuncleorange/vim-tutorial
 
 jobs:
   build-and-push:
@@ -42,3 +43,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          # Fix for potential GHCR issues
+          provenance: false
