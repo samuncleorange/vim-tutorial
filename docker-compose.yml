@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  vim-tutorial:
+    image: ghcr.io/samuncleorange/vim-tutorial:latest
+    container_name: vim-tutorial
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    restart: always
